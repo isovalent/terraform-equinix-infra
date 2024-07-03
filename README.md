@@ -90,8 +90,8 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_host-public-ip-address"></a> [host-public-ip-address](#output\_host-public-ip-address) | the public IP address of the equinix host |
-| <a name="output_k8s_master_ip_mac_hostname_maps"></a> [k8s\_master\_ip\_mac\_hostname\_maps](#output\_k8s\_master\_ip\_mac\_hostname\_maps) | the public IP address of the testbox |
-| <a name="output_k8s_worker_ip_mac_hostname_maps"></a> [k8s\_worker\_ip\_mac\_hostname\_maps](#output\_k8s\_worker\_ip\_mac\_hostname\_maps) | n/a |
-| <a name="output_router-public-ip-address"></a> [router-public-ip-address](#output\_router-public-ip-address) | the public IP address of the router between public and private network |
+| <a name="output_k8s_master_ip_mac_hostname_maps"></a> [k8s\_master\_ip\_mac\_hostname\_maps](#output\_k8s\_master\_ip\_mac\_hostname\_maps) | k8s masters maps including ipv4/mac/hostname/ipv6 |
+| <a name="output_k8s_worker_ip_mac_hostname_maps"></a> [k8s\_worker\_ip\_mac\_hostname\_maps](#output\_k8s\_worker\_ip\_mac\_hostname\_maps) | k8s workers maps including ipv4/mac/hostname/ipv6 |
+| <a name="output_router-public-ip-address"></a> [router-public-ip-address](#output\_router-public-ip-address) | the public IP address of the router |
 | <a name="output_testbox-public-ip-address"></a> [testbox-public-ip-address](#output\_testbox-public-ip-address) | the public IP address of the testbox |
 <!-- END_TF_DOCS -->
