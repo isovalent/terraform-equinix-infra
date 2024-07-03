@@ -1,0 +1,37 @@
+#cloud-config
+disable_root: false
+hostname: ${name}
+growpart:
+  mode: auto
+  devices:
+    - "/"
+ssh_pwauth: false
+users:
+  - name: testbox
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: wheel
+    shell: /bin/bash
+    lock_passwd: false
+    ssh_authorized_keys: ${public_ssh_keys}
+
+write_files:
+
+  - path: /home/testbox/.ssh/id_rsa
+    owner: testbox:testbox
+    permissions: 0o600
+    encoding: base64
+    defer: true
+    content: |
+      ${private_ssh_key}
+runcmd:
+  - |
+    #!/bin/bash
+
+    # Loop until gateway is reachable
+    while ! ping -c 1 ${private_network_router_ipv4_no_mask} > /dev/null 2>&1; do
+        echo "Waiting for network connection..."
+        sleep 5  # Adjust the sleep interval as needed
+    done
+    echo "gateway is reachable. Continuing the cloudinit."
+  - "rm -f /etc/resolv.conf" # change the etc/resolv.conf not to use stub-resolv.conf
+  - "ln -sv /run/systemd/resolve/resolv.conf /etc/resolv.conf"

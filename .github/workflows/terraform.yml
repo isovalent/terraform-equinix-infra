@@ -1,0 +1,37 @@
+name: Terraform docs and formatting
+on:
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  push:
+    branches:
+      - master
+jobs:
+  formatting:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+         ref: ${{ github.event.pull_request.head.sha }}
+      - name: terraform fmt
+        uses: dflook/terraform-fmt-check@fc6a4d63e251c5d6f247fc8310171a4e45e18210
+        with:
+          path: /
+
+  docs:
+    runs-on: ubuntu-22.04
+    needs: formatting
+    steps:
+    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+    - name: Render terraform docs and push changes back to PR branch
+      uses: terraform-docs/gh-actions@cfde42f79b15256c71f4b79ae1d6acea0f689952
+      with:
+        working-dir: .
+        output-file: README.md
+        output-method: inject
+        git-push: "true"
