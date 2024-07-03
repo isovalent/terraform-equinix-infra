@@ -1,3 +1,22 @@
+## Overall
+
+This module will deploy the baremetal server in Equinix metal, and this baremetal server will be used as the hypervisor for the VMs. 
+
+On top of the this hypervisor, it will create 2 virtual networks(public and private) and 2 VMs(router and the testbox).
+
+The public virtual network will be in the same physical public network with the hyperviosr where it can get the public IP address and use the Equinix gateway as the next-hop to access the Internet. Baremetal hypervisor, router and testbox will have the public IP address for you to access them through the Internet
+
+In the private virtual network, the router works as the ipv4/ipv6 L3 gateway/DHCP/DNS server for the private network where you can deploy more VMs in the private networks for your further k8s cluster deployment. The testbox also has the interface in this network to receive the IP address from the DHCP server for test purpose.
+
+We require you to input the mac address prefix,hostname prefix and nodes counts for k8s nodes info in this module because we will populate the staitc DHCP mappingg, the FQDN name and HA proxy config for the k8s nodes in the DHCP/DNS server and HA proxy. When you deploy your k8s nodes, you can just use the MAC address from the output from this module so you can have the relaible IP address from the DHCP server.
+
+## Notes
+* the router will source NAT the virtual network traffic to its public IP address to help the virtual private network VM to access the Internet.
+* the router will forward the 6443/443/80 traffic from the its public/private interfaces to the k8s masters(6443)/workers(443/80) nodes.
+* all the VMs in the private network will receive the ipv4/ipv6 address.
+* Testbox is using the KVM VM ubuntu image so the kernel config can be different from the vanilla ubuntu.
+## Output of this modules
+After running this module, the private key will be generated to output folder and you can SSH the equinix host(username: root) and testbox(testbox) with the private key. The router's default username is vyos and the default password is in the variables.tf. There are some pre populated DNS entries/HA proxy setup for the Openshift platform. please check out the templates/router-user-data.yam to see what has been configured.
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

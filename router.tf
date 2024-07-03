@@ -52,10 +52,12 @@ resource "libvirt_cloudinit_disk" "router" {
     dhcp_vm_node_cidr_last_ipv4_address  = local.dhcp_vm_node_cidr_last_ipv4_address
     dhcp_vm_node_cidr_first_ipv6_address = local.dhcp_vm_node_cidr_first_ipv6_address
     dhcp_vm_node_cidr_last_ipv6_address  = local.dhcp_vm_node_cidr_last_ipv6_address
+    private_network_ipv4_netmask         = local.private_network_ipv4_netmask
     name                                 = "${var.infra_name}_router"
+    vyos_password                        = var.router_password
 
 
-    base_domain                    = var.dns_base_domain
+    dns_base_domain                = var.dns_base_domain
     cluster_name                   = var.k8s_cluster_name
     k8s_master_ip_mac_hostname_map = local.k8s_master_ip_mac_hostname_map
     k8s_worker_ip_mac_hostname_map = local.k8s_worker_ip_mac_hostname_map
