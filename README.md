@@ -23,18 +23,15 @@ After running this module, the private key will be generated to output folder an
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.6.5 |
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.6.5 |
 | <a name="requirement_equinix"></a> [equinix](#requirement\_equinix) | >=1.39 |
-| <a name="requirement_equinix"></a> [equinix](#requirement\_equinix) | >=1.39 |
-| <a name="requirement_libvirt"></a> [libvirt](#requirement\_libvirt) | >=0.7.6 |
 | <a name="requirement_libvirt"></a> [libvirt](#requirement\_libvirt) | >=0.7.6 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_equinix"></a> [equinix](#provider\_equinix) | >=1.39 >=1.39 |
-| <a name="provider_libvirt"></a> [libvirt](#provider\_libvirt) | >=0.7.6 >=0.7.6 |
+| <a name="provider_equinix"></a> [equinix](#provider\_equinix) | >=1.39 |
+| <a name="provider_libvirt"></a> [libvirt](#provider\_libvirt) | >=0.7.6 |
 | <a name="provider_local"></a> [local](#provider\_local) | n/a |
 | <a name="provider_null"></a> [null](#provider\_null) | n/a |
 | <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
@@ -92,10 +89,9 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_example_output"></a> [example\_output](#output\_example\_output) | n/a |
-| <a name="output_host-public-ip-address"></a> [host-public-ip-address](#output\_host-public-ip-address) | n/a |
-| <a name="output_k8s_master_ip_mac_hostname_maps"></a> [k8s\_master\_ip\_mac\_hostname\_maps](#output\_k8s\_master\_ip\_mac\_hostname\_maps) | n/a |
+| <a name="output_host-public-ip-address"></a> [host-public-ip-address](#output\_host-public-ip-address) | the public IP address of the equinix host |
+| <a name="output_k8s_master_ip_mac_hostname_maps"></a> [k8s\_master\_ip\_mac\_hostname\_maps](#output\_k8s\_master\_ip\_mac\_hostname\_maps) | the public IP address of the testbox |
 | <a name="output_k8s_worker_ip_mac_hostname_maps"></a> [k8s\_worker\_ip\_mac\_hostname\_maps](#output\_k8s\_worker\_ip\_mac\_hostname\_maps) | n/a |
-| <a name="output_router-public-ip-address"></a> [router-public-ip-address](#output\_router-public-ip-address) | n/a |
-| <a name="output_testbox-public-ip-address"></a> [testbox-public-ip-address](#output\_testbox-public-ip-address) | n/a |
+| <a name="output_router-public-ip-address"></a> [router-public-ip-address](#output\_router-public-ip-address) | the public IP address of the router between public and private network |
+| <a name="output_testbox-public-ip-address"></a> [testbox-public-ip-address](#output\_testbox-public-ip-address) | the public IP address of the testbox |
 <!-- END_TF_DOCS -->
