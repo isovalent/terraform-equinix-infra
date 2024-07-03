@@ -5,7 +5,7 @@ output "host-public-ip-address" {
 }
 
 output "router-public-ip-address" {
-  description = "the public IP address of the router between public and private network"
+  description = "the public IP address of the router"
   value       = local.equinix_public_network_router_ipv4_no_mask
 
 }
