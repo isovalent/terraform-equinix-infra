@@ -22,5 +22,5 @@ output "k8s_master_ip_mac_hostname_maps" {
 }
 output "k8s_worker_ip_mac_hostname_maps" {
   description = "k8s workers maps including ipv4/mac/hostname/ipv6"
-  value = local.k8s_worker_ip_mac_hostname_map
+  value       = local.k8s_worker_ip_mac_hostname_map
 }
