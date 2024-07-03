@@ -17,9 +17,10 @@ output "testbox-public-ip-address" {
 }
 
 output "k8s_master_ip_mac_hostname_maps" {
-  description = "the public IP address of the testbox"
+  description = "k8s masters maps including ipv4/mac/hostname/ipv6"
   value       = local.k8s_master_ip_mac_hostname_map
 }
 output "k8s_worker_ip_mac_hostname_maps" {
+  description = "k8s workers maps including ipv4/mac/hostname/ipv6"
   value = local.k8s_worker_ip_mac_hostname_map
 }

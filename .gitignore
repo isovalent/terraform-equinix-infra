@@ -24,4 +24,5 @@ terraform.rc
 *.vsix
 *.current_var_file
 output/*
+!output/
 hack/host-username
