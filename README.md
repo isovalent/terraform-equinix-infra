@@ -60,6 +60,7 @@ No modules.
 | [libvirt_volume.testbox_base](https://registry.terraform.io/providers/dmacvicar/libvirt/latest/docs/resources/volume) | resource |
 | [local_file.host-username](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
 | [local_file.private_key_file](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
+| [local_file.public_key_file](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
 | [null_resource.libvirt_host_provisioner](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [tls_private_key.private_key](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
 | [equinix_metal_project.demos](https://registry.terraform.io/providers/equinix/equinix/latest/docs/data-sources/metal_project) | data source |
@@ -93,5 +94,7 @@ No modules.
 | <a name="output_k8s_master_ip_mac_hostname_maps"></a> [k8s\_master\_ip\_mac\_hostname\_maps](#output\_k8s\_master\_ip\_mac\_hostname\_maps) | k8s masters maps including ipv4/mac/hostname/ipv6 |
 | <a name="output_k8s_worker_ip_mac_hostname_maps"></a> [k8s\_worker\_ip\_mac\_hostname\_maps](#output\_k8s\_worker\_ip\_mac\_hostname\_maps) | k8s workers maps including ipv4/mac/hostname/ipv6 |
 | <a name="output_router-public-ip-address"></a> [router-public-ip-address](#output\_router-public-ip-address) | the public IP address of the router |
+| <a name="output_ssh_private_key_file_path"></a> [ssh\_private\_key\_file\_path](#output\_ssh\_private\_key\_file\_path) | private key file path for this project |
+| <a name="output_ssh_public_key_file_path"></a> [ssh\_public\_key\_file\_path](#output\_ssh\_public\_key\_file\_path) | public key file path for this project |
 | <a name="output_testbox-public-ip-address"></a> [testbox-public-ip-address](#output\_testbox-public-ip-address) | the public IP address of the testbox |
 <!-- END_TF_DOCS -->
