@@ -24,3 +24,16 @@ output "k8s_worker_ip_mac_hostname_maps" {
   description = "k8s workers maps including ipv4/mac/hostname/ipv6"
   value       = local.k8s_worker_ip_mac_hostname_map
 }
+
+
+output "ssh_public_key_file_path" {
+  description = "public key file path for this project"
+  value       = local_file.public_key_file.filename
+
+}
+
+output "ssh_private_key_file_path" {
+  description = "private key file path for this project"
+  value       = local_file.private_key_file.filename
+
+}

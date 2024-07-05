@@ -24,6 +24,12 @@ resource "local_file" "private_key_file" {
   file_permission = "0600"
 }
 
+resource "local_file" "public_key_file" {
+  filename        = "${path.module}/output/${var.infra_name}_id_rsa.pub"
+  content         = tls_private_key.private_key.public_key_openssh
+  file_permission = "0600"
+}
+
 
 resource "equinix_metal_project_ssh_key" "public_key" {
   name       = "${var.infra_name}-pub-key"
