@@ -88,8 +88,8 @@ output "libvirt_private_network_id" {
 }
 
 
-output "libvirt_pool_main_id" {
-  description = "libvirt_pool_main_id"
-  value       = libvirt_pool.main.id
+output "libvirt_pool_main_name" {
+  description = "libvirt_pool_main_name"
+  value       = libvirt_pool.main.name
 
 }
