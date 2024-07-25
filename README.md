@@ -90,10 +90,20 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_dns_base_domain"></a> [dns\_base\_domain](#output\_dns\_base\_domain) | base domain for the LAN network so the k8s nodes can get unique the FQDN name and resolved by the router |
 | <a name="output_host-public-ip-address"></a> [host-public-ip-address](#output\_host-public-ip-address) | the public IP address of the equinix host |
-| <a name="output_k8s_master_ip_mac_hostname_maps"></a> [k8s\_master\_ip\_mac\_hostname\_maps](#output\_k8s\_master\_ip\_mac\_hostname\_maps) | k8s masters maps including ipv4/mac/hostname/ipv6 |
-| <a name="output_k8s_worker_ip_mac_hostname_maps"></a> [k8s\_worker\_ip\_mac\_hostname\_maps](#output\_k8s\_worker\_ip\_mac\_hostname\_maps) | k8s workers maps including ipv4/mac/hostname/ipv6 |
+| <a name="output_k8s_cluster_name"></a> [k8s\_cluster\_name](#output\_k8s\_cluster\_name) | this will be used to create the FQDN name in the DNS record to follow the OCP guide(https://docs.openshift.com/container-platform/4.11/installing/installing_bare_metal/installing-bare-metal.html#installation-dns-user-infra-example_installing-bare-metal) |
+| <a name="output_k8s_master_count"></a> [k8s\_master\_count](#output\_k8s\_master\_count) | number of master nodes, and we only support numbers 1 or 3 for now |
+| <a name="output_k8s_master_ip_mac_hostname_map"></a> [k8s\_master\_ip\_mac\_hostname\_map](#output\_k8s\_master\_ip\_mac\_hostname\_map) | k8s masters maps including ipv4/mac/hostname/ipv6 |
+| <a name="output_k8s_worker_count"></a> [k8s\_worker\_count](#output\_k8s\_worker\_count) | number of worker nodes, and we only support numbers less than 9 for now |
+| <a name="output_k8s_worker_ip_mac_hostname_map"></a> [k8s\_worker\_ip\_mac\_hostname\_map](#output\_k8s\_worker\_ip\_mac\_hostname\_map) | k8s workers maps including ipv4/mac/hostname/ipv6 |
+| <a name="output_libvirt_pool_main_id"></a> [libvirt\_pool\_main\_id](#output\_libvirt\_pool\_main\_id) | libvirt\_pool\_main\_id |
+| <a name="output_libvirt_private_network_id"></a> [libvirt\_private\_network\_id](#output\_libvirt\_private\_network\_id) | libvirt private network id |
+| <a name="output_libvirt_public_network_id"></a> [libvirt\_public\_network\_id](#output\_libvirt\_public\_network\_id) | libvirt public network id |
+| <a name="output_private_network_ipv4_cidr"></a> [private\_network\_ipv4\_cidr](#output\_private\_network\_ipv4\_cidr) | the private network IPv4 cidr block for VMs, only /24 is supported for now |
+| <a name="output_private_network_ipv6_cidr"></a> [private\_network\_ipv6\_cidr](#output\_private\_network\_ipv6\_cidr) | the private network IPv6 cidr block for VMs, and only /112 is supported for now |
 | <a name="output_router-public-ip-address"></a> [router-public-ip-address](#output\_router-public-ip-address) | the public IP address of the router |
+| <a name="output_router_password"></a> [router\_password](#output\_router\_password) | The login password for vyos. |
 | <a name="output_ssh_private_key_file_path"></a> [ssh\_private\_key\_file\_path](#output\_ssh\_private\_key\_file\_path) | private key file path for this project |
 | <a name="output_ssh_public_key_file_path"></a> [ssh\_public\_key\_file\_path](#output\_ssh\_public\_key\_file\_path) | public key file path for this project |
 | <a name="output_testbox-public-ip-address"></a> [testbox-public-ip-address](#output\_testbox-public-ip-address) | the public IP address of the testbox |
