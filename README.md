@@ -97,7 +97,7 @@ No modules.
 | <a name="output_k8s_master_ip_mac_hostname_map"></a> [k8s\_master\_ip\_mac\_hostname\_map](#output\_k8s\_master\_ip\_mac\_hostname\_map) | k8s masters maps including ipv4/mac/hostname/ipv6 |
 | <a name="output_k8s_worker_count"></a> [k8s\_worker\_count](#output\_k8s\_worker\_count) | number of worker nodes, and we only support numbers less than 9 for now |
 | <a name="output_k8s_worker_ip_mac_hostname_map"></a> [k8s\_worker\_ip\_mac\_hostname\_map](#output\_k8s\_worker\_ip\_mac\_hostname\_map) | k8s workers maps including ipv4/mac/hostname/ipv6 |
-| <a name="output_libvirt_pool_main_id"></a> [libvirt\_pool\_main\_id](#output\_libvirt\_pool\_main\_id) | libvirt\_pool\_main\_id |
+| <a name="output_libvirt_pool_main_name"></a> [libvirt\_pool\_main\_name](#output\_libvirt\_pool\_main\_name) | libvirt\_pool\_main\_name |
 | <a name="output_libvirt_private_network_id"></a> [libvirt\_private\_network\_id](#output\_libvirt\_private\_network\_id) | libvirt private network id |
 | <a name="output_libvirt_public_network_id"></a> [libvirt\_public\_network\_id](#output\_libvirt\_public\_network\_id) | libvirt public network id |
 | <a name="output_private_network_ipv4_cidr"></a> [private\_network\_ipv4\_cidr](#output\_private\_network\_ipv4\_cidr) | the private network IPv4 cidr block for VMs, only /24 is supported for now |
