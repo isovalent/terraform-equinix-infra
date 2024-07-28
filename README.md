@@ -10,6 +10,10 @@ In the private virtual network, the router works as the ipv4/ipv6 L3 gateway/DHC
 
 We require you to input the mac address prefix,hostname prefix and nodes counts for k8s nodes info in this module because we will populate the staitc DHCP mappingg, the FQDN name and HA proxy config for the k8s nodes in the DHCP/DNS server and HA proxy. When you deploy your k8s nodes, you can just use the MAC address from the output from this module so you can have the relaible IP address from the DHCP server.
 
+## Requirements
+* You need to install xsltproc and mkisofs package for the VM deployment
+* You need to have on your local machine to run the module where I dont quite understand(https://github.com/dmacvicar/terraform-provider-libvirt/issues/1089)
+
 ## Notes
 * the router will source NAT the virtual network traffic to its public IP address to help the virtual private network VM to access the Internet.
 * the router will forward the 6443/443/80 traffic from the its public/private interfaces to the k8s masters(6443)/workers(443/80) nodes.
