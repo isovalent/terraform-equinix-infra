@@ -12,13 +12,14 @@ We require you to input the mac address prefix,hostname prefix and nodes counts 
 
 ## Requirements
 * You need to install xsltproc and mkisofs package for the VM deployment
-* You need to have on your local machine to run the module where I dont quite understand(https://github.com/dmacvicar/terraform-provider-libvirt/issues/1089)
 
 ## Notes
 * the router will source NAT the virtual network traffic to its public IP address to help the virtual private network VM to access the Internet.
 * the router will forward the 6443/443/80 traffic from the its public/private interfaces to the k8s masters(6443)/workers(443/80) nodes.
 * all the VMs in the private network will receive the ipv4/ipv6 address.
 * Testbox is using the KVM VM ubuntu image so the kernel config can be different from the vanilla ubuntu.
+* You have to run `terraform apply --target module.infra.null_resource.libvirt_host_provisioner --target=module.infra.local_file.private_key_file` as the first step to setup the VM hypervisor.
+
 ## Output of this modules
 After running this module, the private key will be generated to output folder and you can SSH the equinix host(username: root) and testbox(testbox) with the private key. The router's default username is vyos and the default password is in the variables.tf. There are some pre populated DNS entries/HA proxy setup for the Openshift platform. please check out the templates/router-user-data.yam to see what has been configured.
 <!-- BEGIN_TF_DOCS -->
