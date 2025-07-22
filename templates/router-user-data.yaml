@@ -260,6 +260,17 @@ host ${v[2]}{
       set container name dhcpd6 volume config destination '/data'
       set container name dhcpd6 volume config mode 'rw'
       set container name dhcpd6 volume config source '/config/container/dhcpd6'
+
+      set protocols bgp system-as 65000
+      set protocols bgp parameters log-neighbor-changes
+      set protocols bgp parameters router-id '192.168.1.1'
+      set protocols bgp listen range '192.168.1.0/24' peer-group 'kubernetes'
+      set protocols bgp peer-group kubernetes address-family ipv4-unicast soft-reconfiguration inbound
+      set protocols bgp peer-group kubernetes disable-connected-check
+      set protocols bgp peer-group kubernetes ebgp-multihop '10'
+      set protocols bgp peer-group kubernetes passive
+      set protocols bgp peer-group kubernetes remote-as '65000'
+
       commit
       save
       exit
